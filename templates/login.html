@@ -1,0 +1,22 @@
+{# index.html #}
+{% extends "base.html" %}
+{% block body %}
+    <a href="/">Home</a>
+    {% if result.error %}
+        <h2>Damn that error: {{ result.error.message }}</h2>
+    {% endif %}
+    {% if result.user %}
+        <h1>Hi {{ result.user.name }}</h1>
+      {% if result.user.credentials %}
+        {% if result.provider.name == 'fb' %}
+        <h2>You are logged in with Facebook.</h2>
+        {% endif %}
+        {% if result.provider.name == 'tw' %}
+        <h2>You are logged in with Twitter</h2>
+        {% endif %}
+      {% endif %}
+        <h2>Your id is: {{ result.user.id }}</h2>
+        <h2>Your email is: {{ result.user.email }}</h2>
+    {% endif %}
+
+{% endblock %}

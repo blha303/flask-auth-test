@@ -1,0 +1,9 @@
+{# index.html #}
+{% extends "base.html" %}
+{% block body %}
+    <a href="/">Home</a>
+    {% if msg %}
+    <p>{{ msg }}</p>
+    {% endif %}
+
+{% endblock %}

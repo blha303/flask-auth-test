@@ -1,0 +1,39 @@
+from authomatic.providers import oauth2, oauth1, openid
+
+SECRET = 'random string'
+
+CONFIG = {
+    
+    'tw': {
+           
+        'class_': oauth1.Twitter,
+        
+        'consumer_key': 'asdf',
+        'consumer_secret': 'asdf',
+    },
+    
+    'fb': {
+           
+        'class_': oauth2.Facebook,
+        
+        'consumer_key': 'asdf',
+        'consumer_secret': 'asdf',
+        
+        'scope': ['email', 'public_profile'],
+    }
+    
+#    'oi': {
+#           
+#        # OpenID provider dependent on the python-openid package.
+#        'class_': openid.OpenID,
+#        'store': openid.SessionOpenIDStore,
+#    },
+    
+#    'twitch': {
+#           
+#        'class_': oauth1.Twitch,
+#        
+#        'consumer_key': 'asdf',
+#        'consumer_secret': 'asdf',
+#    },
+}
